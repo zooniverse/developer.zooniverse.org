@@ -48,7 +48,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'Zooniverse Developer Docs'
+project = u'The Zooniverse Platform'
 copyright = u'2016, The Zooniverse'
 author = u'The Zooniverse'
 

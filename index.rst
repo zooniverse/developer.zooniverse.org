@@ -1,22 +1,26 @@
-.. Zooniverse Developer Docs documentation master file, created by
-   sphinx-quickstart on Wed Feb 10 15:22:23 2016.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
+Zooniverse Developer Docs
+=========================
 
-Welcome to Zooniverse Developer Docs's documentation!
-=====================================================
+The primary goal for this site is to provide guides on how to work with our platform.
 
-Contents:
 
 .. toctree::
    :maxdepth: 2
+   :caption: Dealing with data
+
+   science/classifications_exports
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Dealing with APIs
+
+   apis/clients
 
 
+.. Indices and tables
+.. ==================
 
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+.. * :ref:`genindex`
+.. * :ref:`modindex`
+.. * :ref:`search`
 
