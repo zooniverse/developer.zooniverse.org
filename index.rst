@@ -6,6 +6,11 @@ The primary goal for this site is to provide guides on how to work with our plat
 
 .. toctree::
    :maxdepth: 2
+
+   project_builder
+
+.. toctree::
+   :maxdepth: 2
    :caption: Dealing with data
 
    science/classifications_exports
@@ -14,6 +19,7 @@ The primary goal for this site is to provide guides on how to work with our plat
    :maxdepth: 2
    :caption: Dealing with APIs
 
+   apis/platform
    apis/clients
 
 
