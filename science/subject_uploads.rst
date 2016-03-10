@@ -10,8 +10,9 @@ Instead you will have do one of the following:
 
 A. Use the "run rake task" job on Jenkins to add your images
 B. Gain access to a Panoptes dump worker instance and run the rake task to add your images there
+C. Alternatively you could look at using the `subject uploader script <https://github.com/zooniverse/panoptes-subject-uploader>`_ (this is not covered in this document).
 
-This document explains both approaches.
+This document explains approaches A and B, as well as the preliminary steps common to all approaches.
 
 Step 1 - Create your CSV
 ------------------------
