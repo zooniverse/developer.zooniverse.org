@@ -4,14 +4,17 @@ How to upload externally-hosted images to Project Builder Subject Sets
 Panoptes supports the concept of an "external" subject, that is one whose source images are hosted externally rather
 than being uploaded through the project builder to S3 in the normal manner.
 
-Currently this functionality is not available through the project builder, nor is it available via the API.
+Currently this functionality is not available through the project builder.
 
 Instead you will have do one of the following:
 
 A. Use the "run rake task" job on Jenkins to add your images
 B. Gain access to a Panoptes dump worker instance and run the rake task to add your images there
+C. Use the `subject uploader script <https://github.com/zooniverse/panoptes-subject-uploader>`_ (this is not covered in this document). Note that this doesn't yet support externally-hosted image but it `will soon <https://github.com/zooniverse/panoptes-subject-uploader/issues/7>`_.
+D. You can also use the API - see `API reference on creating a subject <http://docs.panoptes.apiary.io/#reference/subjects/subject-collection/create-a-subject>`_.
 
-This document explains both approaches.
+This document explains approaches A and B, as well as the preliminary steps common to all approaches.
+(TODO: Can someone please add doc for C (once possible) and D).
 
 Step 1 - Create your CSV
 ------------------------
