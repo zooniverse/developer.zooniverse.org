@@ -7,7 +7,7 @@ This repository hosts the source files for the [developer documentation](http://
 
 The first thing to note is that the files are written in [reStructuredText](http://docutils.sourceforge.net/rst.html). 
 This is not fully visible in Github's WYSIWYG view, you will need to view the Raw version of the `.rst` files to see 
-everything, or else edit the files directly.
+everything, or else edit the files directly. You may find [this online reStructuredText editor](http://rst.ninjs.org/) and this [syntax primer](http://docutils.sourceforge.net/docs/user/rst/quickstart.html) useful.
 
 The best way to make edits is to fork this repository, clone the fork, make changes locally, test them using the method 
 below, then when you are happy, submit a pull request. Once the PR is approved and merged, the changes will automatically 
