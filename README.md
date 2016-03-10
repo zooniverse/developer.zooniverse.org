@@ -13,7 +13,8 @@ The best way to make edits is to fork this repository, clone the fork, make chan
 below, then when you are happy, submit a pull request. Once the PR is approved and merged, the changes will automatically 
 be deployed to `developer.zooniverse.org`.
 
-To add a new `.rst` file, simply create it in the appropriate directory, then add it to the table of contents.
+To add a new `.rst` file, simply create it in the appropriate directory, then add it to the table of contents which 
+is `index.rst` in the base directory.
 
 ## Viewing locally
 
