@@ -14,6 +14,7 @@ The primary goal for this site is to provide guides on how to work with our plat
    :caption: Dealing with data
 
    science/classifications_exports
+   science/subject_uploads
 
 .. toctree::
    :maxdepth: 2
