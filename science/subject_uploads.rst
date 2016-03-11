@@ -53,7 +53,7 @@ Step 3A - Create the rake task from the commandline
 
 This approach takes longer, but is faster and useful if you have more than one file to upload.
 
-First, find the IP of a Panoptes dump worker instance. You can do this by typing `lita aws ip panoptes dump` on Slack. Pick an instance, such as ``ec2-54-174-166-171.compute-1.amazonaws.com``.
+First, find the IP of a Panoptes dump worker instance. You can do this by typing ``lita aws ip panoptes dump`` on Slack. Pick an instance, such as ``ec2-54-174-166-171.compute-1.amazonaws.com``.
 
 Now SSH into that instance (you'll need to be on an authorised network or VPN):
 ``ssh -i /code/Production/keys/zooniverse_1.pem ubuntu@ec2-54-174-166-171.compute-1.amazonaws.com``
