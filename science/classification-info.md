@@ -76,7 +76,7 @@ Example
   - closed (true/false) - True if the user-drawn polygon was closed. False otherwise.
   - points (JSON formatted string) - A list of the points the user drew in (x,y) coordinate format, with each x and y value as real numbers. x and y values are pixel values relative to origin as upper left.
 - **points**
-  - x (float) - the horizontal value of the point as a real number relative to *** what? *** using the upper left corner as the origin
-  - y (float) - the vertical value of the point as a real number relative to *** what? *** using the upper left corner as the origin     
+  - x (float) - the horizontal value of the point as a real number using the upper left corner as the origin
+  - y (float) - the vertical value of the point as a real number using the upper left corner as the origin     
 
 **Question tasks**
