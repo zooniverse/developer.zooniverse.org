@@ -40,7 +40,7 @@ You will need to find three IDs - your project ID, your user ID, and the ID of t
 You can find the project ID by looking at the URL when you are viewing the project in the project builder.
 For example, ``https://www.zooniverse.org/lab/988`` tells me my project ID is ``988``.
 
-You can find your user ID by using the developer console in your browser to monitor the network traffic when you reload the Zooniverse home page. Look for the request to ``/api/me`` and it should start with something like ``{"users":[{"id":"209","login":"alexbfree"`` - this tells me my user ID is `209``.
+You can find your user ID by using the developer console in your browser to monitor the network traffic when you reload the Zooniverse home page. Look for the request to ``/api/me`` and it should start with something like ``{"users":[{"id":"209","login":"alexbfree"`` - this tells me my user ID is ``209``.
 
 The user ID you use for the upload will own the images and they will count against the upload limit for that user.
 
@@ -53,7 +53,7 @@ Step 3A - Create the rake task from the commandline
 
 This approach takes longer, but is faster and useful if you have more than one file to upload.
 
-First, find the IP of a Panoptes dump worker instance. You can do this by typing ``lita aws ip panoptes dump`` on Slack. Pick an instance, such as ``ec2-54-174-166-171.compute-1.amazonaws.com``.
+First, find the IP of a Panoptes dump worker instance. You can do this by typing ``lita aws ip panoptes dump production`` on Slack. Pick an instance, such as ``ec2-54-174-166-171.compute-1.amazonaws.com``.
 
 Now SSH into that instance (you'll need to be on an authorised network or VPN):
 ``ssh -i /code/Production/keys/zooniverse_1.pem ubuntu@ec2-54-174-166-171.compute-1.amazonaws.com``
