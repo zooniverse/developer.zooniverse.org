@@ -3,6 +3,11 @@ The Platform
 
 The latest Zooniverse platform consists of a number of services working together.
 
+.. raw:: html
+
+    <script src="https://www.gliffy.com/diagramEmbed.js" type="text/javascript"></script>
+    <script type="text/javascript">gliffy_did="10471345";embedGliffy();</script>
+
 * **Panoptes** is the main API endpoint in our platform. This is where user logins
   happen, and what stores data about projects, workflows, subjects, and
   classifications.
