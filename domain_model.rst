@@ -6,16 +6,18 @@ The domain model is actually pretty simple. We typically think most about the fo
 User
 ----
 
-People are core to the Zooniverse. When talking publically about the Zooniverse I almost always use the term ‘citizen scientist’ or ‘volunteer’ because it feels like an appropriate term for someone who donates their time to one of our projects. When writing code however, the shortest descriptive term that makes sense is usually selected so in our domain model the term we use is User.
+People are core to the Zooniverse. When talking publically about the Zooniverse we almost always use the term ‘citizen scientist’ or ‘volunteer’ because it feels like an appropriate term for someone who donates their time to one of our projects. When writing code however, the shortest descriptive term that makes sense is usually selected so in our domain model the term we use is User.
 
 A User is exactly what you’d expect, it’s a person, it has a bunch of information associated with it such as a username, an email address, information about which projects they’ve helped with and a host of other bits and bobs. Crucially though for us, a User is the same regardless of which project they’re working – that is Users are pan-Zooniverse. Whether you’re classiying galaxies over at Galaxy Zoo or identifying animals on Snapshot Serengeti we’re associating your efforts with the same User record each time which turns out to be useful for a whole bunch of reasons (more later).
 
 Subject
 -------
 
-Just as people are core, as are the things that they’re analysing to help us do research. In Old Weather it’s a scanned image of a ship log book, in Planet Hunters it’s a light curve but regardless of the project internally we call all of these things Subjects. A Subject is the thing that we present to a User when we want to them to do something.
+Just as people are core, as are the things that they’re analysing to help us do research. In Old Weather it’s a scanned image of a ship log book, in Planet Hunters it’s a light curve, whereas in Snapshot Serengeti it is a photograph of an animal. Regardless of the project, internally we call all of these things Subjects. A Subject is the thing that we present to a User when we want to them to do something.
 
 Subjects are then stored in our database with a collection of metadata added from the manifest the user supplied while uploading. For example in Galaxy Zoo we might store some metadata associated with the survey telescope that imaged the galaxy and in Cyclone Center we store information about the date, time and position the image was recorded.
+
+It is important to keep in mind that a Subject is not the same as an image. For some projects, Subjects will have multiple images that a User can cycle between. For others, a Subject will not be an image at all, but might have audio recordings, movies, or pieces of text instead. A Subject could also have multiple different media types at the same time.
 
 Workflow
 --------
@@ -25,7 +27,7 @@ The Workflow is another main entity in our system. It is where most of the param
 Classification
 --------------
 
-It’s no accident that I’ve introduced these three entities, User, Subject and Workflow first as the combination of these culminates in what we call a Classification. The Classification is the core unit of human effort produced by the Zooniverse community as it represents what a person saw and what they said about it. We collect a lot of these!
+As a User is presented with a Subject and progresses through the Workflow, they produce a Classification. The Classification is the core unit of human effort produced by the Zooniverse community as it represents what a person saw and what they said about it. We collect a lot of these!
 
 SubjectSet
 ----------
