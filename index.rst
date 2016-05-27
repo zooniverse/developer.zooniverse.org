@@ -5,8 +5,9 @@ The primary goal for this site is to provide guides on how to work with our plat
 
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
 
+   domain_model
    project_builder
 
 .. toctree::
