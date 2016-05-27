@@ -22,7 +22,7 @@ It is important to keep in mind that a Subject is not the same as an image. For 
 Workflow
 --------
 
-The Workflow is another main entity in our system. It is where most of the parameters for a project are stored. Most importantly, the Workflow has the configuration of Tasks we ask our volunteers to perform when they are presented with a Subject. In Notes from Nature each step of the transcription (such as ‘What is the location?’) is a separate Task, in Galaxy Zoo, each step of the decision tree is a Task too. The Workflow also determines which Subjects are available to work on, and how long they should be worked on.
+The Workflow is another main entity in our system. Most importantly, the Workflow has the configuration of Tasks we ask our volunteers to perform when they are presented with a Subject. In Notes from Nature each step of the transcription (such as ‘What is the location?’) is a separate Task, in Galaxy Zoo, each step of the decision tree is a Task too. The Workflow also determines which Subjects are available to work on, and how long they should be worked on.
 
 Classification
 --------------
@@ -37,7 +37,7 @@ Sometimes we need to group Subjects together for some higher level function. Per
 Project
 -------
 
-The Zooniverse APIs host a whole bunch of different Zooniverse projects so it’s probably no surprise that we represent the actual citizen science project within our domain model. No prize for guessing the name of this entity – it’s called Project. A Project is really just the overarching named entity that SubjectSets and Workflows are associated with.
+The Zooniverse APIs host a whole bunch of different Zooniverse projects so it’s probably no surprise that we represent the actual citizen science project within our domain model. No prize for guessing the name of this entity – it’s called Project. A Project is really just the overarching named entity that SubjectSets and Workflows are associated with. This is also what you create when you "build a project" on our homepage.
 
 Finally
 -------
