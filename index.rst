@@ -16,6 +16,7 @@ The primary goal for this site is to provide guides on how to work with our plat
 
    science/classifications_exports
    science/subject_uploads
+   science/panoptes_ruby_command_line
 
 .. toctree::
    :maxdepth: 2
