@@ -17,8 +17,11 @@ Now start a ruby console::
 
   bundle exec rails c
 
-Now you can run commands using the domain model objects defined in the Ruby code. This should only be done for reading and querying, not for modifying data.
-For example, to find an accurate count of retired subjects so far for a specific project, given the project ID (in this case ``988``) and workflow ID (in this case ``512``)::
+Now you can run commands using the domain model objects defined in the Ruby code.
+
+**IMPORTANT:** This gives you superuser access, with no constraints. This should only be done for reading and querying, not for modifying data. Great care should be taken when running heavy queries and data manipulation using this "API-bypassing" approach is strongly discouraged.
+
+Here is an example of using this Ruby console to find an accurate count of retired subjects so far for a specific project, given the project ID (in this case ``988``) and workflow ID (in this case ``512``)::
 
   p = Project.find(988)
   w = Workflow.find(512)
