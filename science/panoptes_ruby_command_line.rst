@@ -25,6 +25,6 @@ Here is an example of using this Ruby console to find an accurate count of retir
 
   p = Project.find(988)
   w = Workflow.find(512)
-  swcs = SubjectWorkflowCount.retired.where(workflow_id: w.id)
-  swcs = swcs.where("subject_workflow_counts.created_at >= ?", p.launch_date)
-  swcs.count
+  sws = SubjectWorkflowStatus.retired.where(workflow_id: w.id)
+  sws = sws.where("subject_workflow_counts.created_at >= ?", p.launch_date)
+  sws.count
