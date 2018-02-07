@@ -12,6 +12,6 @@ Tools
 API Wrappers
 ------------
 
-* `Python <https://github.com/zooniverse/panoptes-cli>`_
+* `Python <https://github.com/zooniverse/panoptes-python-client>`_
 * `Ruby <https://github.com/zooniverse/panoptes-client.rb>`_
 * `JavaScript <https://github.com/zooniverse/panoptes-javascript-client>`_
