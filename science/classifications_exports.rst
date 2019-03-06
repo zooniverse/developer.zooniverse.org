@@ -29,11 +29,6 @@ to a single subject at a time, you can make things even simpler with a further s
 .. note:: This example assumes you have installed the Python library called Pandas. Many scientific Python distributions
           include this library, but you can install this with `pip install pandas` otherwise.
 
-
 .. todo:: expand
-
-
-
-
 
 .. _Python dict: https://docs.python.org/2/library/stdtypes.html#mapping-types-dict

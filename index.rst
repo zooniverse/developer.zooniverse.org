@@ -6,24 +6,25 @@ The primary goal for this site is to provide guides on how to work with our plat
 
 .. toctree::
    :maxdepth: 1
+   :caption: The Zooniverse
 
-   domain_model
-   project_builder
+   zooniverse/domain_model
+   zooniverse/project_builder
 
 .. toctree::
    :maxdepth: 1
-   :caption: Dealing with data
+   :caption: Project Building
 
    science/classifications_exports
    science/subject_uploads
-   science/panoptes_ruby_command_line
 
 .. toctree::
    :maxdepth: 2
-   :caption: Dealing with APIs
+   :caption: Developers
 
    apis/platform
    apis/clients
+   apis/panoptes_ruby_command_line
 
 
 .. Indices and tables

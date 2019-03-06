@@ -7,15 +7,15 @@ First, find the IP of a Panoptes dump worker instance. You can do this by typing
 
 Now SSH into that instance (you'll need to be on an authorised network or VPN and you'll need to have the key for access)::
 
-  ssh -i /code/Production/keys/zooniverse_1.pem ubuntu@ec2-54-174-166-171.compute-1.amazonaws.com
+    ssh -i /code/Production/keys/zooniverse_1.pem ubuntu@ec2-54-174-166-171.compute-1.amazonaws.com
 
 Now step inside the docker container (you can validate the container name using ``docker ps``)::
 
-  docker exec -it panoptesdumpworker_panoptes_1 bash
+    docker exec -it panoptesdumpworker_panoptes_1 bash
 
 Now start a ruby console::
 
-  bundle exec rails c
+    bundle exec rails c
 
 Now you can run commands using the domain model objects defined in the Ruby code.
 
@@ -23,8 +23,10 @@ Now you can run commands using the domain model objects defined in the Ruby code
 
 Here is an example of using this Ruby console to find an accurate count of retired subjects so far for a specific project, given the project ID (in this case ``988``) and workflow ID (in this case ``512``)::
 
-  p = Project.find(988)
-  w = Workflow.find(512)
-  sws = SubjectWorkflowStatus.retired.where(workflow_id: w.id)
-  sws = sws.where("subject_workflow_counts.created_at >= ?", p.launch_date)
-  sws.count
+```ruby
+p = Project.find(988)
+w = Workflow.find(512)
+sws = SubjectWorkflowStatus.retired.where(workflow_id: w.id)
+sws = sws.where("subject_workflow_counts.created_at >= ?", p.launch_date)
+sws.count
+```
