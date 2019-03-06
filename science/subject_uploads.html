@@ -1,0 +1,280 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>How to upload externally-hosted images to Project Builder Subject Sets &mdash; The Zooniverse Platform 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="The Platform" href="../apis/platform.html" />
+    <link rel="prev" title="Dealing with classifications" href="classifications_exports.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> The Zooniverse Platform
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">The Zooniverse</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../zooniverse/domain_model.html">Domain Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../zooniverse/project_builder.html">Project Builder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Project Building</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="classifications_exports.html">Dealing with classifications</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">How to upload externally-hosted images to Project Builder Subject Sets</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#step-1-create-your-csv">Step 1 - Create your CSV</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-2-prepare-subject-set-and-find-the-necessary-ids">Step 2 - Prepare subject set and find the necessary IDs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-3a-create-the-rake-task-from-the-commandline">Step 3A - Create the rake task from the commandline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-3b-create-the-rake-task-from-jenkins">Step 3B - Create the rake task from Jenkins</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Developers</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../apis/platform.html">The Platform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apis/clients.html">Client Libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apis/panoptes_ruby_command_line.html">How to query Panoptes via Ruby console</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">The Zooniverse Platform</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>How to upload externally-hosted images to Project Builder Subject Sets</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/science/subject_uploads.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="how-to-upload-externally-hosted-images-to-project-builder-subject-sets">
+<h1>How to upload externally-hosted images to Project Builder Subject Sets<a class="headerlink" href="#how-to-upload-externally-hosted-images-to-project-builder-subject-sets" title="Permalink to this headline">¶</a></h1>
+<p>Panoptes supports the concept of an “external” subject, that is one whose source images are hosted externally rather
+than being uploaded through the project builder to S3 in the normal manner.</p>
+<p>Currently this functionality is not available through the project builder.</p>
+<p>Instead you will have do one of the following:</p>
+<p>A. Use the “run rake task” job on Jenkins to add your images
+B. Gain access to a Panoptes dump worker instance and run the rake task to add your images there
+C. Use the <code class="docutils literal notranslate"><span class="pre">subject</span> <span class="pre">uploader</span> <span class="pre">script</span> <span class="pre">&lt;https://github.com/zooniverse/panoptes-subject-uploader&gt;</span></code>_ (this is not covered in this document).
+D. You can write a script to use the API directly - see <code class="docutils literal notranslate"><span class="pre">API</span> <span class="pre">reference</span> <span class="pre">on</span> <span class="pre">creating</span> <span class="pre">a</span> <span class="pre">subject</span> <span class="pre">&lt;http://docs.panoptes.apiary.io/#reference/subjects/subject-collection/create-a-subject&gt;</span></code>_.</p>
+<p>This document explains approaches A and B, as well as the preliminary steps common to all approaches.</p>
+<div class="section" id="step-1-create-your-csv">
+<h2>Step 1 - Create your CSV<a class="headerlink" href="#step-1-create-your-csv" title="Permalink to this headline">¶</a></h2>
+<p>This is common to both approaches. You’ll need to create a CSV, with a header row, where the first column is called
+<code class="docutils literal notranslate"><span class="pre">url</span></code> and contains the URL of your image. One image per row. (TODO: Can someone add info on how to upload a
+multiple-image subject?). The remaining fields are metadata, these will be available in the subject viewer interface
+via the (i) button - so you may want to convert them to “human-friendly” strings rather than database values.
+Here is an example of a trio of scripts (<code class="docutils literal notranslate"><span class="pre">one</span> <span class="pre">&lt;https://github.com/zooniverse/mongo-subject-extractor/blob/master/generate_detailed_consensus.rb&gt;</span></code><em>, <code class="docutils literal notranslate"><span class="pre">two</span> <span class="pre">&lt;https://github.com/zooniverse/serengeti-analysis-scripts/blob/master/generate-species-csvs.py&gt;</span></code></em> , <code class="docutils literal notranslate"><span class="pre">three</span> <span class="pre">&lt;https://github.com/zooniverse/serengeti-analysis-scripts/blob/master/pick-random-csv-subsets.py&gt;</span></code>_) which, when run in sequence, will create CSVs from Snapshot Serengeti subjects.</p>
+<p>Once you have a CSV you should upload it to a publicly available URL.
+One of the easiest ways to do this is to use <code class="docutils literal notranslate"><span class="pre">gist</span> <span class="pre">&lt;https://gist.github.com/&gt;</span></code>_ (<code class="docutils literal notranslate"><span class="pre">command-line</span> <span class="pre">uploader</span> <span class="pre">here</span> <span class="pre">&lt;https://github.com/defunkt/gist&gt;</span></code>_) from github.</p>
+<p><strong>Important note</strong>: Once you have got the gist link, such as <code class="docutils literal notranslate"><span class="pre">https://gist.github.com/alexbfree/a913899eb9cef84110da#file-zebra-100-csv</span></code>, you need to actually paste it into your address bar, then click raw on the csv file within the github UI to get the expanded URL, something like this <code class="docutils literal notranslate"><span class="pre">https://gist.githubusercontent.com/alexbfree/a913899eb9cef84110da/raw/dd5e3e859ebfd9c8be066b781cbb148a4976ff9e/zebra-100.csv</span></code> (note the change of domain). Your upload will fail if you don’t do this.</p>
+</div>
+<div class="section" id="step-2-prepare-subject-set-and-find-the-necessary-ids">
+<h2>Step 2 - Prepare subject set and find the necessary IDs<a class="headerlink" href="#step-2-prepare-subject-set-and-find-the-necessary-ids" title="Permalink to this headline">¶</a></h2>
+<p>This is also common to both approaches.</p>
+<p>You will need to find three IDs - your project ID, your user ID, and the ID of the (probably empty) subject set you’ve created in your Project Builder Workflow to house the new images.</p>
+<p>You can find the project ID by looking at the URL when you are viewing the project in the project builder.
+For example, <code class="docutils literal notranslate"><span class="pre">https://www.zooniverse.org/lab/988</span></code> tells me my project ID is <code class="docutils literal notranslate"><span class="pre">988</span></code>.</p>
+<p>You can find your user ID by using the developer console in your browser to monitor the network traffic when you reload the Zooniverse home page. Look for the request to <code class="docutils literal notranslate"><span class="pre">/api/me</span></code> and it should start with something like <code class="docutils literal notranslate"><span class="pre">{&quot;users&quot;:[{&quot;id&quot;:&quot;209&quot;,&quot;login&quot;:&quot;alexbfree&quot;</span></code> - this tells me my user ID is <code class="docutils literal notranslate"><span class="pre">209</span></code>.</p>
+<p>The user ID you use for the upload will own the images and they will count against the upload limit for that user.</p>
+<p>Finally you need to create a new (empty) subject set in the Project Builder (or, you can upload to an existing one if you wish). Once the subject set is created (you’ll need to defocus the subject set name box by clicking elsewhere on the page to save it), you can now examine the URL to find the subject set ID. For example <code class="docutils literal notranslate"><span class="pre">https://www.zooniverse.org/lab/988/subject-set/3941</span></code> tells me the subject set ID is <code class="docutils literal notranslate"><span class="pre">3491</span></code>.</p>
+<p>Now that you have the project ID, user ID, subject set ID and raw CSV URL, you can proceed to create the rake task, using either of the two approaches:</p>
+</div>
+<div class="section" id="step-3a-create-the-rake-task-from-the-commandline">
+<h2>Step 3A - Create the rake task from the commandline<a class="headerlink" href="#step-3a-create-the-rake-task-from-the-commandline" title="Permalink to this headline">¶</a></h2>
+<p>This approach takes longer, but is faster and useful if you have more than one file to upload.</p>
+<p>First, find the IP of a Panoptes dump worker instance. You can do this by typing <code class="docutils literal notranslate"><span class="pre">lita</span> <span class="pre">aws</span> <span class="pre">ip</span> <span class="pre">panoptes</span> <span class="pre">dump</span> <span class="pre">production</span></code> on Slack. Pick an instance, such as <code class="docutils literal notranslate"><span class="pre">ec2-54-174-166-171.compute-1.amazonaws.com</span></code>.</p>
+<p>Now SSH into that instance (you’ll need to be on an authorised network or VPN):
+<code class="docutils literal notranslate"><span class="pre">ssh</span> <span class="pre">-i</span> <span class="pre">/code/Production/keys/zooniverse_1.pem</span> <span class="pre">ubuntu&#64;ec2-54-174-166-171.compute-1.amazonaws.com</span></code></p>
+<p>Now step inside the docker container (you can validate the container name using <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">ps</span></code>):
+<code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">exec</span> <span class="pre">-it</span> <span class="pre">panoptesdumpworker_panoptes_1</span> <span class="pre">bash</span></code></p>
+<p>Now you can run your rake command as follows, where <code class="docutils literal notranslate"><span class="pre">projectID</span></code>, <code class="docutils literal notranslate"><span class="pre">userID</span></code>, <code class="docutils literal notranslate"><span class="pre">setID</span></code>, <code class="docutils literal notranslate"><span class="pre">url</span></code> are replaced by the values you determined above. Don’t include the angle brackets.
+<code class="docutils literal notranslate"><span class="pre">bundle</span> <span class="pre">exec</span> <span class="pre">rake</span> <span class="pre">subjects:import[projectID,userID,setID,url]</span></code></p>
+<p>You can track the progress of your import job in <code class="docutils literal notranslate"><span class="pre">Sidekiq</span> <span class="pre">&lt;https://panoptes.zooniverse.org/sidekiq/&gt;</span></code>_.</p>
+</div>
+<div class="section" id="step-3b-create-the-rake-task-from-jenkins">
+<h2>Step 3B - Create the rake task from Jenkins<a class="headerlink" href="#step-3b-create-the-rake-task-from-jenkins" title="Permalink to this headline">¶</a></h2>
+<p>This approach is easier, but slower, as it has to spin up a VM. It’s inefficient if you have many CSVs to upload.</p>
+<p>Log into <code class="docutils literal notranslate"><span class="pre">Jenkins</span> <span class="pre">&lt;http://jenkins.zooniverse.org&gt;</span></code><em>, and go the <code class="docutils literal notranslate"><span class="pre">Run</span> <span class="pre">rake</span> <span class="pre">task</span> <span class="pre">&lt;https://jenkins.zooniverse.org/job/Run%20rake%20task&gt;</span></code></em> job.</p>
+<p>Click on <code class="docutils literal notranslate"><span class="pre">Build</span> <span class="pre">with</span> <span class="pre">parameters</span></code> on the left hand menu.</p>
+<p>construct a string like this:
+<code class="docutils literal notranslate"><span class="pre">subjects:import[projectID,userID,setID,url]</span></code>
+and paste it into the <code class="docutils literal notranslate"><span class="pre">RAKE_TASK_NAME</span></code> box.</p>
+<p>Make sure to select <code class="docutils literal notranslate"><span class="pre">panoptes-api</span></code> from the <code class="docutils literal notranslate"><span class="pre">INSTANCE_NAME</span></code> box.
+Click Build.</p>
+<p>You can monitor your import task like any other Jenkins job, from the dashboard.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../apis/platform.html" class="btn btn-neutral float-right" title="The Platform" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="classifications_exports.html" class="btn btn-neutral float-left" title="Dealing with classifications" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, The Zooniverse
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

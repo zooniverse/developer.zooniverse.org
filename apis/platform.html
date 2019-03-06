@@ -1,0 +1,251 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>The Platform &mdash; The Zooniverse Platform 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Client Libraries" href="clients.html" />
+    <link rel="prev" title="How to upload externally-hosted images to Project Builder Subject Sets" href="../science/subject_uploads.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> The Zooniverse Platform
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">The Zooniverse</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../zooniverse/domain_model.html">Domain Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../zooniverse/project_builder.html">Project Builder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Project Building</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../science/classifications_exports.html">Dealing with classifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../science/subject_uploads.html">How to upload externally-hosted images to Project Builder Subject Sets</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developers</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">The Platform</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#services-still-under-development">Services still under development</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="clients.html">Client Libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="panoptes_ruby_command_line.html">How to query Panoptes via Ruby console</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">The Zooniverse Platform</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>The Platform</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/apis/platform.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="the-platform">
+<h1>The Platform<a class="headerlink" href="#the-platform" title="Permalink to this headline">¶</a></h1>
+<p>The latest Zooniverse platform consists of a number of services working together.</p>
+<script src="https://www.gliffy.com/diagramEmbed.js" type="text/javascript"></script>
+<script type="text/javascript">gliffy_did="10471345";embedGliffy();</script><ul class="simple">
+<li><strong>Panoptes</strong> is the main API endpoint in our platform. This is where user logins
+happen, and what stores data about projects, workflows, subjects, and
+classifications. <a class="reference external" href="https://zooniverse.github.io/Panoptes">https://zooniverse.github.io/Panoptes</a></li>
+<li><strong>Cellect</strong> is a service that selects a few randomly-chosen subjects for a
+user to work on next.</li>
+<li><strong>Designator</strong> is an alternative to Cellect. It’s written in Elixir with no
+C-based dependencies. It differentiates by loading and unloading data automatically,
+and offering options to bias selection to certain sets, either per workflow or even on a per-user basis.</li>
+<li><strong>Caesar</strong> is an auxilliary service that deals with subject retirement rules.
+Panoptes itself comes with a very simple threshold on the number of
+classifications per subject. Caesar is where we implement any project-specific
+retirement rules (although obviously we try and generalise when possible).
+<a class="reference external" href="https://zooniverse.github.io/caesar">https://zooniverse.github.io/caesar</a></li>
+<li><strong>ZooEventStats</strong> gathers metrics on everything in our platform.</li>
+<li><strong>Aggregation</strong></li>
+</ul>
+<div class="section" id="services-still-under-development">
+<h2>Services still under development<a class="headerlink" href="#services-still-under-development" title="Permalink to this headline">¶</a></h2>
+<p>The following services are still being built and are not yet in active use:</p>
+<ul class="simple">
+<li><strong>Warehouse</strong> will take over the exporting of classifications for a project.</li>
+<li><strong>Notifications</strong> will maintain an open websocket (or long-polling)
+connection to browsers, so that we get a channel to push notifications to
+browsers directly.</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="clients.html" class="btn btn-neutral float-right" title="Client Libraries" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../science/subject_uploads.html" class="btn btn-neutral float-left" title="How to upload externally-hosted images to Project Builder Subject Sets" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, The Zooniverse
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

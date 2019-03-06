@@ -1,0 +1,240 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>How to query Panoptes via Ruby console &mdash; The Zooniverse Platform 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Client Libraries" href="clients.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> The Zooniverse Platform
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">The Zooniverse</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../zooniverse/domain_model.html">Domain Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../zooniverse/project_builder.html">Project Builder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Project Building</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../science/classifications_exports.html">Dealing with classifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../science/subject_uploads.html">How to upload externally-hosted images to Project Builder Subject Sets</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developers</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="platform.html">The Platform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="clients.html">Client Libraries</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">How to query Panoptes via Ruby console</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">The Zooniverse Platform</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>How to query Panoptes via Ruby console</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/apis/panoptes_ruby_command_line.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="how-to-query-panoptes-via-ruby-console">
+<h1>How to query Panoptes via Ruby console<a class="headerlink" href="#how-to-query-panoptes-via-ruby-console" title="Permalink to this headline">¶</a></h1>
+<p>Sometimes you will want to get live information from the Panoptes backend that is not available from the APIs. For staff and those with the appropriate level of access, the following approach is possible:</p>
+<p>First, find the IP of a Panoptes dump worker instance. You can do this by typing <code class="docutils literal notranslate"><span class="pre">lita</span> <span class="pre">aws</span> <span class="pre">ip</span> <span class="pre">panoptes</span> <span class="pre">dump</span> <span class="pre">production</span></code> on Slack. Pick an instance, such as <code class="docutils literal notranslate"><span class="pre">ec2-54-174-166-171.compute-1.amazonaws.com</span></code>.</p>
+<p>Now SSH into that instance (you’ll need to be on an authorised network or VPN and you’ll need to have the key for access)::</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ssh</span> <span class="o">-</span><span class="n">i</span> <span class="o">/</span><span class="n">code</span><span class="o">/</span><span class="n">Production</span><span class="o">/</span><span class="n">keys</span><span class="o">/</span><span class="n">zooniverse_1</span><span class="o">.</span><span class="n">pem</span> <span class="n">ubuntu</span><span class="nd">@ec2</span><span class="o">-</span><span class="mi">54</span><span class="o">-</span><span class="mi">174</span><span class="o">-</span><span class="mi">166</span><span class="o">-</span><span class="mf">171.</span><span class="n">compute</span><span class="o">-</span><span class="mf">1.</span><span class="n">amazonaws</span><span class="o">.</span><span class="n">com</span>
+</pre></div>
+</div>
+<p>Now step inside the docker container (you can validate the container name using <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">ps</span></code>)::</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">exec</span> <span class="o">-</span><span class="n">it</span> <span class="n">panoptesdumpworker_panoptes_1</span> <span class="n">bash</span>
+</pre></div>
+</div>
+<p>Now start a ruby console::</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">bundle</span> <span class="n">exec</span> <span class="n">rails</span> <span class="n">c</span>
+</pre></div>
+</div>
+<p>Now you can run commands using the domain model objects defined in the Ruby code.</p>
+<p><strong>IMPORTANT:</strong> This gives you superuser access, with no constraints. This should only be done for reading and querying, not for modifying data. Great care should be taken when running heavy queries and data manipulation using this “API-bypassing” approach is strongly discouraged.</p>
+<p>Here is an example of using this Ruby console to find an accurate count of retired subjects so far for a specific project, given the project ID (in this case <code class="docutils literal notranslate"><span class="pre">988</span></code>) and workflow ID (in this case <code class="docutils literal notranslate"><span class="pre">512</span></code>)::</p>
+<div class="highlight-ruby notranslate"><div class="highlight"><pre><span></span><span class="nb">p</span> <span class="o">=</span> <span class="no">Project</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="mi">988</span><span class="p">)</span>
+<span class="n">w</span> <span class="o">=</span> <span class="no">Workflow</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="mi">512</span><span class="p">)</span>
+<span class="n">sws</span> <span class="o">=</span> <span class="no">SubjectWorkflowStatus</span><span class="o">.</span><span class="n">retired</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="ss">workflow_id</span><span class="p">:</span> <span class="n">w</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+<span class="n">sws</span> <span class="o">=</span> <span class="n">sws</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s2">&quot;subject_workflow_counts.created_at &gt;= ?&quot;</span><span class="p">,</span> <span class="nb">p</span><span class="o">.</span><span class="n">launch_date</span><span class="p">)</span>
+<span class="n">sws</span><span class="o">.</span><span class="n">count</span>
+</pre></div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="clients.html" class="btn btn-neutral float-left" title="Client Libraries" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, The Zooniverse
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
