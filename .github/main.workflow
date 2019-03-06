@@ -13,5 +13,5 @@ action "Deploy" {
     env = {
         BUILD_DIR = "_build/html"
     }
-    secrets = ["GH_PAT]
+    secrets = ["GH_PAT"]
 }
