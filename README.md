@@ -1,6 +1,12 @@
 developer.zooniverse.org
 ========================
 
+## TAKE HEED
+
+The default and main branch on this repo is `source`. This is because Github Pages insists that the `master` branch is to be deployed and served if the repository is an organization pages one.
+
+## TAKE HEED ABOVE
+
 This repository hosts the source files for the [developer documentation](http://developer.zooniverse.org).
 
 ## How to make edits
