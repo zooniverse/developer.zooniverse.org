@@ -4,7 +4,7 @@ workflow "BuildDeploy" {
 }
 
 action "Build" {
-    uses = "./sphinx-build"
+    uses = "marten/github-sphinx-actions@master"
 }
 
 action "Only on master" {

@@ -22,7 +22,7 @@ While editing, you'll probably want to view the resulting HTML before committing
 will need both Python and Ruby installed, and then install the following dependencies:
 
 ```
-pip install sphinx
+pip install -r requirements.txt
 gem install rerun
 ```
 
