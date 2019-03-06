@@ -15,6 +15,6 @@ LABEL "repository"="http://github.com/marten/github-pages-sphinx"
 
 RUN apk --no-cache add git make
 
-ADD entrypoint.sh
+ADD entrypoint.sh /entrypoint.sh
 
 ENTRYPOINT ["/entrypoint.sh"]
