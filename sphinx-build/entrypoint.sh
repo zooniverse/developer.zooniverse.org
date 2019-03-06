@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/sh
 set -o errexit #abort if any command fails
 
 echo 'Installing dependencies'
