@@ -4,6 +4,5 @@ workflow "BuildDeploy" {
 }
 
 action "Deploy" {
-    uses = "./action-a"
-    secrets = ["GITHUB_TOKEN"]
+    uses = "./sphinx-build"
 }
